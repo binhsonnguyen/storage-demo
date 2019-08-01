@@ -5,6 +5,17 @@
     <title>Demo storage in Javascript</title>
 </head>
 <body>
-
+<div style="border: 1px solid #FAA">
+    <input type="text" id="string1" onkeyup="concat()">
+    <input type="text" id="string2" onkeyup="concat()">
+    <p id="concat"></p>
+</div>
+<script>
+    function concat() {
+        let string1 = document.getElementById("string1").value
+        let string2 = document.getElementById("string2").value
+        document.getElementById("concat").innerText = string1 + " " + string2;
+    }
+</script>
 </body>
 </html>
