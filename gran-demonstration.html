@@ -6,15 +6,33 @@
 </head>
 <body>
 <div style="border: 1px solid #FAA">
+    <h3>Concat</h3>
     <input type="text" id="string1" onkeyup="concat()">
     <input type="text" id="string2" onkeyup="concat()">
     <p id="concat"></p>
 </div>
+<div style="border: 1px solid #AAF">
+    <h3>Sum</h3>
+    <input type="text" id="number1" onkeyup="sum()">
+    <input type="text" id="number2" onkeyup="sum()">
+    <p id="sum"></p>
+</div>
 <script>
     function concat() {
-        let string1 = document.getElementById("string1").value
-        let string2 = document.getElementById("string2").value
+        let string1 = document.getElementById("string1").value;
+        let string2 = document.getElementById("string2").value;
         document.getElementById("concat").innerText = string1 + " " + string2;
+    }
+
+    function sum() {
+        let value1 = document.getElementById("number1").value;
+        let number1 = Number(value1);
+
+        let value2 = document.getElementById("number2").value;
+        let number2 = Number(value2);
+
+        let sum = number1 + number2;
+        document.getElementById("sum").innerText = sum;
     }
 </script>
 </body>
