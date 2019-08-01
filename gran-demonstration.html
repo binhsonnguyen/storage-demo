@@ -26,6 +26,29 @@
     <input type="button" value="-" onclick="sub()">
     <input type="button" value="Use" onclick="useValue()">
 </div>
+<div>
+    <table style="border: 1px solid #0F0;">
+        <tr>
+            <td rowspan="2">
+                Điện
+            </td>
+            <td>
+                Công tắc 1
+                <input id="switch1" type="checkbox" onclick="checkLampStatus()">
+            </td>
+            <td rowspan="2">
+                Sáng
+                <input id="lamp" type="checkbox" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Công tắc 2
+                <input id="switch2" type="checkbox" onclick="checkLampStatus()">
+            </td>
+        </tr>
+    </table>
+</div>
 <script>
     function concat() {
         let string1 = document.getElementById("string1").value;
@@ -72,6 +95,13 @@
         document.getElementById("arg2").value = "";
         document.getElementById("result").innerText = "";
         document.getElementById("arg2").focus();
+    }
+
+    function checkLampStatus() {
+        let switch1On = document.getElementById("switch1").checked;
+        let switch2On = document.getElementById("switch2").checked;
+        let lampStatus = switch1On || switch2On;
+        document.getElementById("lamp").checked = lampStatus;
     }
 </script>
 </body>
